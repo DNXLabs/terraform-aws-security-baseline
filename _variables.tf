@@ -1,11 +1,7 @@
-# == REQUIRED VARS
-
-variable "name" {
-  description = "Name of this ECS cluster"
-}
 # --------------------------------------------------------------------------------------------------
 # Variables for alarm-baseline module.
 # --------------------------------------------------------------------------------------------------
+
 
 variable "alarm_namespace" {
   description = "The namespace in which all alarms are set up."
@@ -19,4 +15,10 @@ variable "alarm_sns_topic_name" {
 variable "cloudtrail_log_group_name" {
   description = "The name of Cloudtrail log group."
   default     = "bubbletea-cloudtrail"
+}
+variable "tags" {
+  description = "Specifies object tags key and value. This applies to all resources created by this module."
+  default = {
+    "Terraform" = true
+  }
 }
