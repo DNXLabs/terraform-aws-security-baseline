@@ -12,3 +12,17 @@ module "alarm_baseline" {
 
   tags = var.tags
 }
+
+# --------------------------------------------------------------------------------------------------
+# Chatbot Notifications
+# --------------------------------------------------------------------------------------------------
+module "chatbot" {
+  source = "./modules/chatbot-notifications"
+
+  enabled             = var.enable_chatbot_slack
+  org_name            = var.org_name
+  slack_channel_id    = var.slack_channel_id
+  slack_workspace_id  = var.slack_workspace_id
+  alarm_sns_topic_arn = module.alarm_baseline.alarm_sns_topic.arn
+  tags                = var.tags
+}

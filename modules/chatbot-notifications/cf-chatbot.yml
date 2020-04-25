@@ -1,0 +1,31 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'CloudFormation Chatbot'
+
+Parameters: 
+  ConfigurationNameParam: 
+    Type: String
+  SlackChannelIdParam: 
+    Type: String
+  SlackWorkspaceIdParam:
+    Type: String
+  SnsTopicArnParam:
+    Type: String
+  IamRoleArnArnParam:
+    Type: String
+    
+
+Resources:
+  Chatbot:
+    Type: AWS::Chatbot::SlackChannelConfiguration
+    Properties: 
+      ConfigurationName: 
+        !Ref ConfigurationNameParam
+      IamRoleArn: 
+        !Ref IamRoleArnArnParam
+      SlackChannelId: 
+        !Ref SlackChannelIdParam
+      SlackWorkspaceId: 
+        !Ref SlackWorkspaceIdParam
+      SnsTopicArns: 
+        - !Ref SnsTopicArnParam

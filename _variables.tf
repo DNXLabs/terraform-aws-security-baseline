@@ -26,3 +26,21 @@ variable "tags" {
     "Terraform" = true
   }
 }
+# --------------------------------------------------------------------------------------------------
+# Variables for chatbot notifications.
+# --------------------------------------------------------------------------------------------------
+variable "org_name" {
+  description = "Name for this organization"
+}
+variable "enable_chatbot_slack" {
+  description = "If true, will create aws chatboot and integrate to slack"
+  default     = "false"
+}
+variable "slack_channel_id" {
+  description = "Sclack channel id to send budget notfication using AWS Chatbot"
+  default     = ""
+}
+variable "slack_workspace_id" {
+  description = "Sclack workspace id to send budget notfication using AWS Chatbot"
+  default     = ""
+}
