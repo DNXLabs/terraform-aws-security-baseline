@@ -30,6 +30,5 @@ Set up CloudWatch alarms to notify you when critical changes happen in your AWS 
 | Name | Description |
 |------|-------------|
 | alarm\_sns\_topic | The SNS topic to which CloudWatch Alarms will be sent. |
-| sns\_topic\_arn | The ARN SNS topic to which CloudWatch Alarms will be sent. |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
