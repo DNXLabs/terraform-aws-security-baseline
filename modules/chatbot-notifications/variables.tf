@@ -1,7 +1,7 @@
 variable "org_name" {
   description = "Name for this organization"
 }
-variable "enable" {
+variable "enabled" {
   description = "If true, will create aws chatboot and integrate to slack"
   default     = "false"
 }
