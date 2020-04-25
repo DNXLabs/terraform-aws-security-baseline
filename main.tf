@@ -23,6 +23,6 @@ module "chatbot" {
   org_name            = "${var.org_name}-${var.alarm_namespace}"
   slack_channel_id    = var.slack_channel_id
   slack_workspace_id  = var.slack_workspace_id
-  alarm_sns_topic_arn = module.alarm_baseline.alarm_sns_topic.arn
+  alarm_sns_topic_arn = module.alarm_baseline.sns_topic_arn
   tags                = var.tags
 }
