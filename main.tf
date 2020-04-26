@@ -17,7 +17,7 @@ module "alarm_baseline" {
 # Chatbot Notifications
 # --------------------------------------------------------------------------------------------------
 module "chatbot" {
-  source = "git::https://github.com/DNXLabs/terraform-aws-chatbot?ref=1.0.0"
+  source = "git::https://github.com/DNXLabs/terraform-aws-chatbot?ref=0.1.0"
 
   enabled             = var.enable_chatbot_slack
   org_name            = var.org_name
