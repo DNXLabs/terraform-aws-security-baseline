@@ -27,3 +27,15 @@ module "chatbot" {
   alarm_sns_topic_arn = module.alarm_baseline.alarm_sns_topic.*.arn[0]
   tags                = var.tags
 }
+# --------------------------------------------------------------------------------------------------
+# AWS COnfig Baseline
+# --------------------------------------------------------------------------------------------------
+module "config" {
+  source = "./modules/config-baseline"
+
+  enabled                       = var.enable_config_baseline
+  s3_bucket_name                = var.config_s3_bucket_name
+  delivery_frequency            = var.config_delivery_frequency
+  include_global_resource_types = var.config_include_global_resource_types
+  tags                          = var.tags
+}
