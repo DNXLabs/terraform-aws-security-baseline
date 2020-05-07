@@ -10,12 +10,14 @@ resource "aws_sns_topic" "config" {
   tags = var.tags
 }
 resource "aws_iam_role_policy_attachment" "config" {
-  role       = aws_iam_role.config_role.name
+  count      = var.enabled ? 1 : 0
+  role       = aws_iam_role.config_role[0].name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSConfigRole"
 }
 
 resource "aws_iam_role" "config_role" {
-  name = "awsconfig-role"
+  count = var.enabled ? 1 : 0
+  name  = "awsconfig-role"
 
   assume_role_policy = <<POLICY
 {
@@ -38,7 +40,7 @@ resource "aws_config_configuration_recorder" "recorder" {
 
   name = var.recorder_name
 
-  role_arn = aws_iam_role.config_role.arn
+  role_arn = aws_iam_role.config_role[0].arn
 
   recording_group {
     all_supported                 = true
