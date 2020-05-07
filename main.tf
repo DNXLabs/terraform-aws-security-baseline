@@ -37,5 +37,6 @@ module "config" {
   s3_bucket_name                = var.config_s3_bucket_name
   delivery_frequency            = var.config_delivery_frequency
   include_global_resource_types = var.config_include_global_resource_types
+  iam_role_arn                  = var.config_iam_role_arn
   tags                          = var.tags
 }
