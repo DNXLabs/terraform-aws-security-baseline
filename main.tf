@@ -16,7 +16,7 @@ module "alarm_baseline" {
 # --------------------------------------------------------------------------------------------------
 # Chatbot Notifications
 # --------------------------------------------------------------------------------------------------
-module "chatbot" {
+module "chatbot_alarms" {
   source = "git::https://github.com/DNXLabs/terraform-aws-chatbot?ref=0.1.1"
 
   enabled             = var.enable_chatbot_slack
@@ -24,7 +24,7 @@ module "chatbot" {
   workspace_name      = var.alarm_namespace
   slack_channel_id    = var.slack_channel_id
   slack_workspace_id  = var.slack_workspace_id
-  alarm_sns_topic_arn = module.alarm_baseline.alarm_sns_topic.*.arn[0]
+  alarm_sns_topic_arn = (var.enable_chatbot_slack && var.enable_alarm_baseline) ? module.alarm_baseline.alarm_sns_topic.*.arn[0] : null
   tags                = var.tags
 }
 # --------------------------------------------------------------------------------------------------
