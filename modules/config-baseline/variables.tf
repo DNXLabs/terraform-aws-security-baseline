@@ -3,9 +3,6 @@ variable "enabled" {
   default     = true
 }
 
-variable "iam_role_arn" {
-  description = "The ARN of the IAM Role which AWS Config will use."
-}
 
 variable "s3_bucket_name" {
   description = "The name of the S3 bucket which will store configuration snapshots."

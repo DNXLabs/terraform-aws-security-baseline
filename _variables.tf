@@ -63,6 +63,3 @@ variable "config_include_global_resource_types" {
   description = "Specifies whether AWS Config includes all supported types of global resources with the resources that it records."
   default     = true
 }
-variable "config_iam_role_arn" {
-  description = "The ARN of the IAM Role which AWS Config will use."
-}
