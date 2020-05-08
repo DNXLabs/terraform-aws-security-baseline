@@ -32,7 +32,9 @@ module "chatbot_alarms" {
 # --------------------------------------------------------------------------------------------------
 module "config" {
   source = "./modules/config-baseline"
-
+  providers = {
+    aws = aws
+  }
   enabled                       = var.enable_config_baseline
   s3_bucket_name                = var.config_s3_bucket_name
   delivery_frequency            = var.config_delivery_frequency
