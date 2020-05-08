@@ -5,19 +5,21 @@
 resource "aws_sns_topic" "config" {
   count = var.enabled ? 1 : 0
 
-  name = var.sns_topic_name
-
-  tags = var.tags
+  name     = var.sns_topic_name
+  provider = aws.account
+  tags     = var.tags
 }
 resource "aws_iam_role_policy_attachment" "config" {
   count      = var.enabled ? 1 : 0
+  provider   = aws.account
   role       = aws_iam_role.config_role[0].name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSConfigRole"
 }
 
 resource "aws_iam_role" "config_role" {
-  count = var.enabled ? 1 : 0
-  name  = "awsconfig-role"
+  count    = var.enabled ? 1 : 0
+  provider = aws.account
+  name     = "awsconfig-role"
 
   assume_role_policy = <<POLICY
 {
@@ -38,7 +40,8 @@ POLICY
 resource "aws_config_configuration_recorder" "recorder" {
   count = var.enabled ? 1 : 0
 
-  name = var.recorder_name
+  name     = var.recorder_name
+  provider = aws.account
 
   role_arn = aws_iam_role.config_role[0].arn
 
@@ -51,7 +54,8 @@ resource "aws_config_configuration_recorder" "recorder" {
 resource "aws_config_delivery_channel" "bucket" {
   count = var.enabled ? 1 : 0
 
-  name = var.delivery_channel_name
+  name     = var.delivery_channel_name
+  provider = aws.account
 
   s3_bucket_name = var.s3_bucket_name
   s3_key_prefix  = var.s3_key_prefix
@@ -65,7 +69,8 @@ resource "aws_config_delivery_channel" "bucket" {
 }
 
 resource "aws_config_configuration_recorder_status" "recorder" {
-  count = var.enabled ? 1 : 0
+  count    = var.enabled ? 1 : 0
+  provider = aws.account
 
   name = aws_config_configuration_recorder.recorder[0].id
 
@@ -78,7 +83,8 @@ resource "aws_config_configuration_recorder_status" "recorder" {
 # --------------------------------------------------------------------------------------------------
 
 resource "aws_config_config_rule" "restricted_ports" {
-  count = var.enabled ? 1 : 0
+  count    = var.enabled ? 1 : 0
+  provider = aws.account
 
   name = "RestrictedIncomingTraffic"
 

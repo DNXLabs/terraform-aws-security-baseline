@@ -14,7 +14,7 @@ Enable AWS Config in all regions to automatically take configuration snapshots.
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
+| aws.account | n/a |
 
 ## Inputs
 
