@@ -10,7 +10,9 @@ Terraform module to set up AWS account with the secure baseline configuration ba
 
 ## Providers
 
-No provider.
+| Name | Version |
+|------|---------|
+| aws | n/a |
 
 ## Inputs
 

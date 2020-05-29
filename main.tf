@@ -27,14 +27,4 @@ module "chatbot_alarms" {
   alarm_sns_topic_arn = (var.enable_chatbot_slack && var.enable_alarm_baseline) ? module.alarm_baseline.alarm_sns_topic.*.arn[0] : null
   tags                = var.tags
 }
-# --------------------------------------------------------------------------------------------------
-# AWS Config Baseline
-# --------------------------------------------------------------------------------------------------
-module "config" {
-  source                        = "./modules/config-baseline"
-  enabled                       = var.enable_config_baseline
-  s3_bucket_name                = var.config_s3_bucket_name
-  delivery_frequency            = var.config_delivery_frequency
-  include_global_resource_types = var.config_include_global_resource_types
-  tags                          = var.tags
-}
+
