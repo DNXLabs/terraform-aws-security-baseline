@@ -1,3 +1,9 @@
+variable "aws_region" {
+  description = "The AWS region to deploy into (e.g. ap-southeast-2)."
+  default     = "ap-southeast-2"
+}
+
+
 # --------------------------------------------------------------------------------------------------
 # Variables for alarm-baseline module.
 # --------------------------------------------------------------------------------------------------
