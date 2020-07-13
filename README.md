@@ -1,7 +1,8 @@
 # terraform-aws-security
 Terraform module to set up AWS account with the secure baseline configuration based on CIS Amazon Web Services Foundations.
 
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!--- BEGIN_TF_DOCS --->
+
 ## Requirements
 
 | Name | Version |
@@ -20,6 +21,7 @@ Terraform module to set up AWS account with the secure baseline configuration ba
 |------|-------------|------|---------|:--------:|
 | alarm\_namespace | The namespace in which all alarms are set up. | `string` | `"CISBenchmark"` | no |
 | alarm\_sns\_topic\_name | The name of the SNS Topic which will be notified when any alarm is performed. | `string` | `"CISAlarm"` | no |
+| aws\_region | The AWS region to deploy into (e.g. ap-southeast-2). | `string` | `"ap-southeast-2"` | no |
 | cloudtrail\_log\_group\_name | The name of Cloudtrail log group. | `string` | `"bubbletea-cloudtrail"` | no |
 | config\_delivery\_frequency | The frequency which AWS Config sends a snapshot into the S3 bucket. | `string` | `"One_Hour"` | no |
 | config\_include\_global\_resource\_types | Specifies whether AWS Config includes all supported types of global resources with the resources that it records. | `bool` | `true` | no |
@@ -38,4 +40,12 @@ Terraform module to set up AWS account with the secure baseline configuration ba
 |------|-------------|
 | alarm\_sns\_topic | The SNS topic to which CloudWatch Alarms will be sent. |
 
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!--- END_TF_DOCS --->
+
+## Authors
+
+Module managed by [DNX Solutions](https://github.com/DNXLabs).
+
+## License
+
+Apache 2 Licensed. See [LICENSE](https://github.com/DNXLabs/terraform-aws-security/blob/master/LICENSE) for full details.
