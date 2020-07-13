@@ -12,6 +12,41 @@ resource "aws_iam_role_policy_attachment" "config" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSConfigRole"
 }
 
+resource "aws_iam_role_policy" "config_s3" {
+  count  = var.enable_config_baseline ? 1 : 0
+  name   = "awsconfig-policy"
+  policy = data.aws_iam_policy_document.config_s3[0].json
+  role   = aws_iam_role.config_role[0].name
+}
+
+data "aws_iam_policy_document" "config_s3" {
+  count = var.enable_config_baseline ? 1 : 0
+  statement {
+    sid    = "1"
+    effect = "Allow"
+    actions = [
+      "s3:PutObject"
+    ]
+    resources = [
+      "arn:aws:s3:::${var.config_s3_bucket_name}/prefix/AWSLogs/${data.aws_caller_identity.current.account_id}/*",
+    ]
+    condition {
+      test     = "StringLike"
+      variable = "s3:x-amz-acl"
+
+      values = [
+        "bucket-owner-full-control"
+      ]
+    }
+  }
+  statement {
+    sid       = "2"
+    effect    = "Allow"
+    actions   = ["s3:GetBucketAcl"]
+    resources = ["arn:aws:s3:::${var.config_s3_bucket_name}"]
+  }
+}
+
 resource "aws_iam_role" "config_role" {
   count = var.enable_config_baseline ? 1 : 0
   name  = "awsconfig-role"
@@ -31,32 +66,6 @@ resource "aws_iam_role" "config_role" {
   ]
 }
 POLICY
-
-  statement {
-    sid    = "1"
-    effect = "Allow"
-    actions = [
-      "s3:PutObject"
-    ]
-    resources = [
-      "arn:aws:s3:::${var.config_s3_bucket_name}/prefix/AWSLogs/${data.aws_caller_identity.current.account_id}/*",
-    ]
-    condition {
-      test     = "StringLike"
-      variable = "s3:x-amz-acl"
-
-      values = [
-        "bucket-owner-full-control"
-      ]
-    }
-  }
-
-  statement {
-    sid       = "2"
-    effect    = "Allow"
-    actions   = ["s3:GetBucketAcl"]
-    resources = ["arn:aws:s3:::${var.config_s3_bucket_name}"]
-  }
 }
 resource "aws_config_configuration_recorder" "recorder" {
   count = var.enable_config_baseline ? 1 : 0
