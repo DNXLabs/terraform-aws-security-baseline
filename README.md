@@ -47,7 +47,8 @@ In addition you have the option to :
        - Creates a Slack channel id to send budget notification using AWS Chatbot
        - Creates a Slack workspace id to send budget notification using AWS Chatbot
  - Enable or not the config baseline - It's a boolean that creates or not AWS Config
-   -If true:
+
+   - If true:
        - Creates AWS Config 
 
 
