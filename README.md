@@ -1,5 +1,32 @@
 # terraform-aws-security
-Terraform module to set up AWS account with the secure baseline configuration based on CIS Amazon Web Services Foundations.
+Terraform-aws-security is a module to set up AWS account with the secure baseline configuration based on Center for Internet Security (CIS) Amazon Web Services Foundations.
+
+This module requires:
+ - Terraform Version >=0.12.20
+
+This Module contains two modules inside:
+
+  - alarm-baseline - This modules set up CloudWatch alarms to notify when critical changes happen in AWS account. Those CloudWatch metrics and alarms are defined in the CIS benchmark.
+
+    - Unauthorised api call
+    - No Multi-factor authentication (MFA) console signin
+    - Root Usage
+    - Identity and Access Management (IAM) changes
+    - Cloudtrail configuration changes
+    - Console signin failures
+    - Disable or Delete Customer Master Keys (CMK)
+    - S3 Bucket policy changes
+    - AWS Config Changes
+    - Security Group Changes
+    - Network Access Control List (NACL) changes
+    - Network Gateways changes
+    - Route Table Changes
+    - Virtual Private Cloud (VPC) Changes
+
+  - Terraform-aws-chatbot - An utility Module to create AWS Chatbot and its dependencies git::https://github.com/DNXLabs/terraform-aws-chatbot?ref=0.1.1
+       
+This modules creates the following resources:
+
 
 <!--- BEGIN_TF_DOCS --->
 
