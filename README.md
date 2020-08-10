@@ -1,4 +1,4 @@
-# terraform-aws-security
+# terraform-aws-security-baseline
 Terraform-aws-security is a module to set up AWS account with the secure baseline configuration based on Center for Internet Security (CIS) Amazon Web Services Foundations.
 
 This module requires:
@@ -26,6 +26,29 @@ This Module contains two modules inside:
   - Terraform-aws-chatbot - An utility Module to create AWS Chatbot and its dependencies git::https://github.com/DNXLabs/terraform-aws-chatbot?ref=0.1.1
        
 This modules creates the following resources:
+ 
+ - S3 bucket - S3 bucket which will store configuration snapshots
+ - Cloudwatch alarms
+ - Simple Notification Services (SNS) topic
+ - Identity and Access Management (IAM) role - This role lets you define a set of permissions. AWS Config assumes the role that you assign to it to write to your S3 bucket, publish to your SNS topic, and to make Describe or List API requests to get configuration details for your AWS resources.
+
+
+
+In addition you have the option to :
+
+ - Create an alarm namespace - The name that all alarms are setup
+ - Cloudtrail logs group name
+ - Set the frequency which AWS Config sends a snapshot into the S3 bucket
+ - Speficy whether AWS config includes all supported types of global resources with the resources that it records
+ - Enable or not the alarm baseline - It's a boolean flag that enables or not the cloudwatch alarm baseline. If false, no resources are created
+ - Enable or not AWS chatbot - It's a boolean flag that creates or not aws chatbot and integrates to slack
+    - If enabled:
+       - Creates aws chatboot and integrate to slack
+       - Creates a Slack channel id to send budget notification using AWS Chatbot
+       - Creates a Slack workspace id to send budget notification using AWS Chatbot
+ - Enable or not the config baseline - It's a boolean that creates or not AWS Config
+   -If true:
+       - Creates AWS Config 
 
 
 <!--- BEGIN_TF_DOCS --->
