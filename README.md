@@ -33,7 +33,6 @@ This modules creates the following resources:
  - Identity and Access Management (IAM) role - This role lets you define a set of permissions. AWS Config assumes the role that you assign to it to write to your S3 bucket, publish to your SNS topic, and to make Describe or List API requests to get configuration details for your AWS resources.
 
 
-
 In addition you have the option to :
 
  - Create an alarm namespace - The name that all alarms are setup
@@ -52,6 +51,9 @@ In addition you have the option to :
        - Creates AWS Config 
 
 
+ More Information: https://dnxlabs.slab.com/public/g8myqhdw
+
+ 
 <!--- BEGIN_TF_DOCS --->
 
 ## Requirements
