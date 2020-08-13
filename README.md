@@ -1,8 +1,6 @@
 # terraform-aws-security-baseline
-Terraform-aws-security is a module to set up AWS account with the secure baseline configuration based on Center for Internet Security (CIS) Amazon Web Services Foundations.
 
-This module requires:
- - Terraform Version >=0.12.20
+This terraform module sets up AWS account with the secure baseline configuration based on Center for Internet Security (CIS) Amazon Web Services Foundations.
 
 This Module contains two modules inside:
 
@@ -24,9 +22,9 @@ This Module contains two modules inside:
     - Virtual Private Cloud (VPC) Changes
 
   - Terraform-aws-chatbot - An utility Module to create AWS Chatbot and its dependencies git::https://github.com/DNXLabs/terraform-aws-chatbot?ref=0.1.1
-       
+
 This modules creates the following resources:
- 
+
  - S3 bucket - S3 bucket which will store configuration snapshots
  - Cloudwatch alarms
  - Simple Notification Services (SNS) topic
@@ -48,12 +46,8 @@ In addition you have the option to :
  - Enable or not the config baseline - It's a boolean that creates or not AWS Config
 
    - If true:
-       - Creates AWS Config 
+       - Creates AWS Config
 
-
- More Information: https://dnxlabs.slab.com/public/g8myqhdw
-
- 
 <!--- BEGIN_TF_DOCS --->
 
 ## Requirements
