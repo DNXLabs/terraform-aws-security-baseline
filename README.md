@@ -2,7 +2,7 @@
 
 This terraform module sets up AWS account with the secure baseline configuration based on Center for Internet Security (CIS) Amazon Web Services Foundations.
 
-This Module contains two modules inside:
+Submodules:
 
   - alarm-baseline - This modules set up CloudWatch alarms to notify when critical changes happen in AWS account. Those CloudWatch metrics and alarms are defined in the CIS benchmark.
 
@@ -23,7 +23,7 @@ This Module contains two modules inside:
 
   - Terraform-aws-chatbot - An utility Module to create AWS Chatbot and its dependencies git::https://github.com/DNXLabs/terraform-aws-chatbot?ref=0.1.1
 
-This modules creates the following resources:
+The following resources will be created:
 
  - S3 bucket - S3 bucket which will store configuration snapshots
  - Cloudwatch alarms
