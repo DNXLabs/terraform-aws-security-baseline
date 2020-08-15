@@ -1,5 +1,8 @@
 # terraform-aws-security-baseline
 
+[![Lint Status](https://github.com/DNXLabs/terraform-aws-security-baseline/workflows/Lint/badge.svg)](https://github.com/DNXLabs/terraform-aws-security-baseline/actions)
+[![LICENSE](https://img.shields.io/github/license/DNXLabs/terraform-aws-security-baseline)](https://github.com/DNXLabs/terraform-aws-security-baseline/blob/master/LICENSE)
+
 This terraform module sets up AWS account with the secure baseline configuration based on Center for Internet Security (CIS) Amazon Web Services Foundations.
 
 Submodules:
