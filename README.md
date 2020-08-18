@@ -24,7 +24,7 @@ Submodules:
     - Route Table Changes
     - Virtual Private Cloud (VPC) Changes
 
-  - Terraform-aws-chatbot - An utility Module to create AWS Chatbot and its dependencies git::https://github.com/DNXLabs/terraform-aws-chatbot?ref=0.1.1
+  - Terraform-aws-chatbot - An utility Module to create AWS Chatbot and its dependencies git::https://github.com/DNXLabs/terraform-aws-chatbot?ref=1.0.0
 
 The following resources will be created:
 
