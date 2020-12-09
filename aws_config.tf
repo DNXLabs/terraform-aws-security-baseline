@@ -28,7 +28,7 @@ data "aws_iam_policy_document" "config_s3" {
       "s3:PutObject"
     ]
     resources = [
-      "arn:aws:s3:::${var.config_s3_bucket_name}/prefix/AWSLogs/${data.aws_caller_identity.current.account_id}/*",
+      "arn:aws:s3:::${local.config_s3_bucket_name}/prefix/AWSLogs/${data.aws_caller_identity.current.account_id}/*",
     ]
     condition {
       test     = "StringLike"
@@ -43,7 +43,7 @@ data "aws_iam_policy_document" "config_s3" {
     sid       = "2"
     effect    = "Allow"
     actions   = ["s3:GetBucketAcl"]
-    resources = ["arn:aws:s3:::${var.config_s3_bucket_name}"]
+    resources = ["arn:aws:s3:::${local.config_s3_bucket_name}"]
   }
 }
 
@@ -85,7 +85,7 @@ resource "aws_config_delivery_channel" "bucket" {
 
   name = "default"
 
-  s3_bucket_name = var.config_s3_bucket_name
+  s3_bucket_name = var.config_s3_bucket_name == "" ? aws_s3_bucket.config[0].bucket : var.config_s3_bucket_name
   s3_key_prefix  = ""
   sns_topic_arn  = aws_sns_topic.config[0].arn
 

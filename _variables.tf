@@ -1,9 +1,3 @@
-variable "aws_region" {
-  description = "The AWS region to deploy into (e.g. ap-southeast-2)."
-  default     = "ap-southeast-2"
-}
-
-
 # --------------------------------------------------------------------------------------------------
 # Variables for alarm-baseline module.
 # --------------------------------------------------------------------------------------------------
@@ -60,6 +54,7 @@ variable "enable_config_baseline" {
 }
 variable "config_s3_bucket_name" {
   description = "The name of the S3 bucket which will store configuration snapshots."
+  default     = ""
 }
 variable "config_delivery_frequency" {
   description = "The frequency which AWS Config sends a snapshot into the S3 bucket."
@@ -68,4 +63,8 @@ variable "config_delivery_frequency" {
 variable "config_include_global_resource_types" {
   description = "Specifies whether AWS Config includes all supported types of global resources with the resources that it records."
   default     = true
+}
+
+locals {
+  config_s3_bucket_name = var.config_s3_bucket_name != "" ? var.config_s3_bucket_name : "${var.org_name}-audit-config-${data.aws_region.current.name}-${data.aws_caller_identity.current.account_id}"
 }
