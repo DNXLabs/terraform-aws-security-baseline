@@ -1,5 +1,5 @@
 data "aws_iam_policy_document" "s3_policy_config" {
-    count = var.enable_config_baseline ? 1 : 0
+  count = var.enable_config_baseline ? 1 : 0
   statement {
     sid    = "ConfigLogs"
     effect = "Allow"
@@ -60,7 +60,7 @@ data "aws_iam_policy_document" "s3_policy_config" {
 }
 
 resource "aws_s3_bucket" "config" {
-    count = var.enable_config_baseline ? 1 : 0
+  count  = var.enable_config_baseline ? 1 : 0
   bucket = local.config_s3_bucket_name
   acl    = "private"
   policy = data.aws_iam_policy_document.s3_policy_config[0].json

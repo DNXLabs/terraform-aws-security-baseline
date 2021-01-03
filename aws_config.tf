@@ -126,7 +126,6 @@ resource "aws_config_config_rule" "restricted_ports" {
 }
 JSON
 
-  tags = var.tags
-
+  tags       = var.tags
   depends_on = [aws_config_configuration_recorder.recorder[0]]
 }
