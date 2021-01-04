@@ -85,7 +85,7 @@ resource "aws_config_delivery_channel" "bucket" {
 
   name = "default"
 
-  s3_bucket_name = var.config_s3_bucket_name == "" ? aws_s3_bucket.config[0].bucket : var.config_s3_bucket_name
+  s3_bucket_name = local.config_s3_bucket_name
   s3_key_prefix  = ""
   sns_topic_arn  = aws_sns_topic.config[0].arn
 
