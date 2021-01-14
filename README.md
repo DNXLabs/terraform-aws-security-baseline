@@ -64,15 +64,20 @@ In addition you have the option to :
 | Name | Version |
 |------|---------|
 | aws | n/a |
+| aws.master | n/a |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| account\_email | AWS Account email to be used with Guardduty | `string` | n/a | yes |
 | config\_delivery\_frequency | The frequency which AWS Config sends a snapshot into the S3 bucket. | `string` | `"One_Hour"` | no |
 | config\_include\_global\_resource\_types | Specifies whether AWS Config includes all supported types of global resources with the resources that it records. | `bool` | `true` | no |
 | config\_s3\_bucket\_name | The name of the S3 bucket which will store configuration snapshots. | `string` | `""` | no |
 | enable\_config\_baseline | If true, will create aws config | `bool` | `true` | no |
+| guardduty | Enable/Disables guardduty | `bool` | `true` | no |
+| guardduty\_detector\_id | GuardDuty detector ID in the master account | `string` | `""` | no |
+| master\_account\_id | Master account ID | `any` | n/a | yes |
 | org\_name | Name for this organization | `any` | n/a | yes |
 | tags | Specifies object tags key and value. This applies to all resources created by this module. | `map` | <pre>{<br>  "Terraform": true<br>}</pre> | no |
 
