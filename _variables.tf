@@ -10,9 +10,6 @@ variable "org_name" {
   description = "Name for this organization"
 }
 
-# --------------------------------------------------------------------------------------------------
-# Variables for alarm-baseline module.
-# --------------------------------------------------------------------------------------------------
 variable "enable_config_baseline" {
   description = "If true, will create aws config"
   default     = true
@@ -28,6 +25,25 @@ variable "config_delivery_frequency" {
 variable "config_include_global_resource_types" {
   description = "Specifies whether AWS Config includes all supported types of global resources with the resources that it records."
   default     = true
+}
+
+variable "account_email" {
+  type        = string
+  description = "AWS Account email to be used with Guardduty"
+}
+
+variable "master_account_id" {
+  description = "Master account ID"
+}
+
+variable "guardduty" {
+  default     = true
+  description = "Enable/Disables guardduty"
+}
+
+variable "guardduty_detector_id" {
+  default     = ""
+  description = "GuardDuty detector ID in the master account"
 }
 
 locals {
