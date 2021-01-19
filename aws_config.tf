@@ -49,7 +49,8 @@ data "aws_iam_policy_document" "config_s3" {
 
 resource "aws_iam_role" "config_role" {
   count = var.enable_config_baseline ? 1 : 0
-  name  = "awsconfig-role"
+  name  = "awsconfig-role-${data.aws_region.current.name}"
+
 
   assume_role_policy = <<POLICY
 {
