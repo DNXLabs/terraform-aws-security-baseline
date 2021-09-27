@@ -39,7 +39,7 @@ In addition you have the option to :
  - Create an alarm namespace - The name that all alarms are setup
  - Cloudtrail logs group name
  - Set the frequency which AWS Config sends a snapshot into the S3 bucket
- - Speficy whether AWS config includes all supported types of global resources with the resources that it records
+ - Specify whether AWS config includes all supported types of global resources with the resources that it records
  - Enable or not the alarm baseline - It's a boolean flag that enables or not the cloudwatch alarm baseline. If false, no resources are created
  - Enable or not AWS chatbot - It's a boolean flag that creates or not aws chatbot and integrates to slack
     - If enabled:
