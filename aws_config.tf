@@ -9,7 +9,7 @@ resource "aws_sns_topic" "config" {
 resource "aws_iam_role_policy_attachment" "config" {
   count      = var.enable_config_baseline ? 1 : 0
   role       = aws_iam_role.config_role[0].name
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSConfigRole"
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWS_ConfigRole"
 }
 
 resource "aws_iam_role_policy" "config_s3" {
