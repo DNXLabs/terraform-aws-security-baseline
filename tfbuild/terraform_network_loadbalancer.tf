@@ -1,4 +1,4 @@
-# Create a network load balancer
+# Create a network load balancer.
 resource "aws_lb" "my_network_lb" {
   name               = var.load_balancer_name
   internal           = var.nlb_internal
