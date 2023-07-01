@@ -67,3 +67,15 @@ variable "inbound_cidr" {
   description = "CIDR block for the inbound rule"
   type        = string
 }
+
+variable "load_balancer_name" {
+  description = "Name of the network load balancer"
+  type        = string
+}
+
+variable "nlb_internal" {
+  description = "Indicates whether the load balancer should be internal or not"
+  type        = string
+}
+
+

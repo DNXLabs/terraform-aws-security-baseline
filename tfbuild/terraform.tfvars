@@ -15,3 +15,6 @@ inbound_cidr     = "0.0.0.0/0"
 inbound_port     = 80
 security_group_description     = "My security group description"
 security_group_name     = "MySecurityGroup"
+
+nlb_internal     = false
+load_balancer_name     = "MyNetworkLoadBalancer"
