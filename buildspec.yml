@@ -10,6 +10,7 @@ phases:
     runtime-versions:
       python: 3.9
     commands:
+      - ls -ltr
       - "curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip"
       - "unzip -o terraform.zip"
       - "mv terraform /bin"
