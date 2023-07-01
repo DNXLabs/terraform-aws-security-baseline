@@ -38,9 +38,11 @@ phases:
       - "cp checkov.xml ${CODEBUILD_SRC_DIR}/reports/checkov.xml"
       - "cp tfsec-junit.xml ${CODEBUILD_SRC_DIR}/reports/tfsec-junit.xml"
       - ls -ltr
+      - cd tfbuild
       - terraform init
       - terraform plan
       - terraform apply --auto-approve
+      - cd ..
 artifacts:
   files:
     - '**/*'
