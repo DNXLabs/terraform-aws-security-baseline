@@ -21,3 +21,8 @@ resource "aws_internet_gateway" "my_internet_gateway" {
     Name = var.internet_gateway_name
   }
 }
+
+resource "aws_internet_gateway_attachment" "internet_gateway_attachment" {
+  internet_gateway_id = aws_internet_gateway.my_internet_gateway.id
+  vpc_id              = aws_vpc.my_vpc.id
+}
