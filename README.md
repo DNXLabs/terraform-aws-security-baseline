@@ -18,50 +18,12 @@ Running these four stages ensures the integrity of the terraform configurations.
 |-- LICENSE
 |-- README.md
 |-- provider.tf
-|-- examples
-|   `-- terraform.tfvars
+|-- buildspec.yml
+|-- terraform.tfvars
 |-- versions.tf
 |-- main.tf
-|-- modules
-|   |-- codebuild
-|   |   |-- README.md
-|   |   |-- main.tf
-|   |   |-- outputs.tf
-|   |   `-- variables.tf
-|   |-- codecommit
-|   |   |-- README.md
-|   |   |-- provider.tf
-|   |   |-- main.tf
-|   |   |-- outputs.tf
-|   |   `-- variables.tf
-|   |-- codepipeline
-|   |   |-- README.md
-|   |   |-- main.tf
-|   |   |-- outputs.tf
-|   |   `-- variables.tf
-|   |-- iam-role
-|   |   |-- README.md
-|   |   |-- provider.tf
-|   |   |-- main.tf
-|   |   |-- outputs.tf
-|   |   `-- variables.tf
-|   |-- kms
-|   |   |-- README.md
-|   |   |-- main.tf
-|   |   |-- outputs.tf
-|   |   `-- variables.tf
-|   `-- s3
-|       |-- README.md
-|       |-- main.tf
-|       |-- outputs.tf
-|       `-- variables.tf
-|-- templates
-|   |-- buildspec_apply.yml
-|   |-- buildspec_destroy.yml
-|   |-- buildspec_plan.yml
-|   |-- buildspec_validate.yml
-|   `-- scripts
-|       `-- tf_ssp_validation.sh
+|-- scripts
+| `-- tf_ssp_validation.sh
 `-- variables.tf
 
 ```
