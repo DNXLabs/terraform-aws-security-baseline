@@ -40,7 +40,7 @@ phases:
       - "cp checkov.xml ${CODEBUILD_SRC_DIR}/reports/checkov.xml"
       - "cp tfsec-junit.xml ${CODEBUILD_SRC_DIR}/reports/tfsec-junit.xml"
       - terraform plan
-      - terraform apply
+      - terraform apply --auto-approve
 artifacts:
   files:
     - '**/*'
