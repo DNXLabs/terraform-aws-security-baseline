@@ -18,3 +18,5 @@ security_group_name     = "MySecurityGroup"
 
 nlb_internal     = false
 load_balancer_name     = "MyNetworkLoadBalancer"
+
+internet_gateway_name     = "MyInternetGateway"

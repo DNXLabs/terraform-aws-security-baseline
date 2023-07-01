@@ -78,4 +78,10 @@ variable "nlb_internal" {
   type        = string
 }
 
+variable "internet_gateway_name" {
+  description = "Name of the internet gateway"
+  type        = string
+}
+
+
 
