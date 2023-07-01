@@ -17,10 +17,10 @@ Running these four stages ensures the integrity of the terraform configurations.
 |-- CONTRIBUTING.md
 |-- LICENSE
 |-- README.md
-|-- data.tf
+|-- provider.tf
 |-- examples
 |   `-- terraform.tfvars
-|-- locals.tf
+|-- versions.tf
 |-- main.tf
 |-- modules
 |   |-- codebuild
@@ -30,7 +30,7 @@ Running these four stages ensures the integrity of the terraform configurations.
 |   |   `-- variables.tf
 |   |-- codecommit
 |   |   |-- README.md
-|   |   |-- data.tf
+|   |   |-- provider.tf
 |   |   |-- main.tf
 |   |   |-- outputs.tf
 |   |   `-- variables.tf
@@ -41,7 +41,7 @@ Running these four stages ensures the integrity of the terraform configurations.
 |   |   `-- variables.tf
 |   |-- iam-role
 |   |   |-- README.md
-|   |   |-- data.tf
+|   |   |-- provider.tf
 |   |   |-- main.tf
 |   |   |-- outputs.tf
 |   |   `-- variables.tf
