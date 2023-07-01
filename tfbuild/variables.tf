@@ -45,5 +45,25 @@ variable "internal_subnet_cidr" {
 
 variable "internal_subnet_az" {
   description = "Availability zone for the internal subnet"
+  type        = string
 }
 
+variable "security_group_name" {
+  description = "Name of the security group"
+  type        = string
+}
+
+variable "security_group_description" {
+  description = "Description of the security group"
+  type        = string
+}
+
+variable "inbound_port" {
+  description = "Port number for the inbound rule"
+  type        = string
+}
+
+variable "inbound_cidr" {
+  description = "CIDR block for the inbound rule"
+  type        = string
+}
