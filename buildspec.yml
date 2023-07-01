@@ -22,7 +22,7 @@ phases:
       - "mv terraform /bin"
       - "rm terraform.zip"
       - "yum update -y"
-      - "yum install -y curl jq awscli"
+      - "yum install -y curl jq awscli --allowerasing"
       - "pip3 install checkov"
       - "yum install -y golang"
       - "wget -q -O tfsec https://github.com/aquasecurity/tfsec/releases/download/${TFSEC_VERSION}/tfsec-linux-amd64"
