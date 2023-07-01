@@ -23,8 +23,8 @@ Running these four stages ensures the integrity of the terraform configurations.
 |-- versions.tf
 |-- main.tf
 |-- scripts
-| `-- tf_ssp_validation.sh
-`-- variables.tf
+| -- tf_ssp_validation.sh
+|-- variables.tf
 
 ```
 ## Installation
