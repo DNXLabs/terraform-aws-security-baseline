@@ -19,6 +19,9 @@ phases:
     commands:
       - ls -ltr
       - cd tfbuild
+      - cp -r ./modules .
+      - cp -r ./src .
+      - ls -ltr
       - terraform init
       - terraform plan
       - terraform destroy
