@@ -1,4 +1,3 @@
-/*
 # Create a network load balancer.
 resource "aws_lb" "my_network_lb" {
   name               = var.load_balancer_name
@@ -22,4 +21,3 @@ resource "aws_internet_gateway" "my_internet_gateway" {
     Name = var.internet_gateway_name
   }
 }
-*/

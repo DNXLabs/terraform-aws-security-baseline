@@ -1,4 +1,3 @@
-/*
 # Create a public subnet
 resource "aws_subnet" "public_subnet" {
   vpc_id                  = aws_vpc.my_vpc.id
@@ -32,4 +31,3 @@ resource "aws_subnet" "internal_subnet" {
     Name = "InternalSubnet"
   }
 }
-*/
