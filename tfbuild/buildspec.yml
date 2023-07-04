@@ -25,10 +25,9 @@ phases:
       - cp -r . ../
       - cd ..
       - ls -ltr
-      #- terraform init
-      #- terraform plan
-      - terraform destroy
-      #- terraform apply --auto-approve
+      - terraform init
+      - terraform plan
+      - terraform apply --auto-approve
 artifacts:
   files:
     - '**/*'
