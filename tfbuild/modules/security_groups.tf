@@ -1,3 +1,4 @@
+/*
 # Create a security group
 resource "aws_security_group" "my_security_group" {
   name        = var.security_group_name
@@ -24,3 +25,4 @@ resource "aws_security_group" "my_security_group" {
     Name = var.security_group_name
   }
 }
+*/
