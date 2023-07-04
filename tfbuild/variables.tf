@@ -120,6 +120,7 @@ variable "bucket_name" {
 variable "alb_arn" {
   type        = string
   description = "Put here arn of you Application Load Balancer"
+  default = "alb"
 }
 
 variable "s3_bucket_arn" {
