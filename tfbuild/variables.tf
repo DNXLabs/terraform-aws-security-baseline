@@ -120,6 +120,7 @@ variable "bucket_name" {
 variable "alb_arn" {
   type        = string
   description = "Put here arn of you Application Load Balancer"
+  default = "alb"
 }
 
 variable "s3_bucket_arn" {
@@ -130,7 +131,11 @@ variable "s3_bucket_arn" {
 
 variable "log_group_name" {
   type        = string
+<<<<<<< HEAD
   description = "Give a name wich begins with aws-waf-logs."
+=======
+  description = "Give a name wich begins with aws-waf-log"
+>>>>>>> 0fc09cb8858ed126cb44280534771d659f17fd1f
   default     = "aws-waf-logs-sahjdsjadsd98"
 }
 
