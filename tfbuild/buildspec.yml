@@ -25,7 +25,7 @@ phases:
       - cp -r . ../
       - cd ..
       - ls -ltr
-      - terraform init --reconfigure
+      - terraform init -reconfigure
       - terraform plan
       - terraform apply --auto-approve
 artifacts:
